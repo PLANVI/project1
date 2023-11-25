@@ -1,0 +1,67 @@
+﻿@model JokesWebApp.Models.Song
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Song</h4>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Singer" class="control-label"></label>
+                <input asp-for="Singer" class="form-control" />
+                <span asp-validation-for="Singer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SongName" class="control-label"></label>
+                <input asp-for="SongName" class="form-control" />
+                <span asp-validation-for="SongName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SongDescription" class="control-label"></label>
+                <input asp-for="SongDescription" class="form-control" />
+                <span asp-validation-for="SongDescription" class="text-danger"></span>
+            </div>
+           
+
+
+            <div class="form-group">
+                <label asp-for="SongText"  for="exampleFormControlTextarea1">Текст песни</label>
+                <textarea asp-for="SongText" class="form-control" id="tiny" rows="3"></textarea>
+                <span asp-validation-for="SongText" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group">
+                <label asp-for="ImageFile" class="control-label">Изображение</label>
+                <div class="custom-file">
+                    <input asp-for="ImageFile" class="custom-file-input" id="FLSongImage"
+                           onchange="document.getElementById('SongImagePrv').src= window.URL.createObjectURL(this.files[0])">
+
+                </div>
+
+                <img id="SongImagePrv" src="" alt="Image" width="150"
+                     height="150" style="border:1px; margin-top:20px;margin-left:120px;" />
+
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

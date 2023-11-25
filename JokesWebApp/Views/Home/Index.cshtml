@@ -1,0 +1,154 @@
+﻿@using Microsoft.AspNetCore.Identity
+
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager 
+
+
+<div class="block">
+
+    <br />
+
+
+    @if (User.IsInRole("Admin"))
+    {
+        <h1>Привет Админ</h1>
+    }
+
+
+
+
+
+
+
+    <h5 style="font-weight:700"> Вводный курс корейского языка</h5>
+
+
+    <div class="block">
+
+        <br />
+
+
+
+
+
+
+        <div style="padding: 10px;"></div>
+        @if (Model.Count == 0)
+        {
+            <div class="card col-md-12">
+                <div class="row g-0">
+                    <div class="col-md-4">
+
+                        class="img-fluid rounded-start rounded">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Список курсов пуст :(</h5>
+                            <p class="card-text">
+                                Список пополниться позже, не расстраивайтесь
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="padding: 10px;"></div>
+            <div class="card text-center">
+                <div class="card-header">
+                    <ul class="nav nav-pills card-header-pills">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Active</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Special title treatment</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="row">
+                @foreach (var courses in Model)
+                {
+                    <div class="row row-cols-1 col-md-12 text-center cafeCard">
+
+                        <div class="col" style="padding: 10px;">
+                            <div class="card">
+
+
+                                <div class="card-body">
+
+
+                                    
+
+                                    
+
+                                    <div class="card-description">
+                                        <h5 class="cafeName"> @courses.Name</h5>
+
+
+                                        <p> @Html.Raw(courses.Material) </p>
+                                    </div>
+
+                                    
+
+
+                                </div>
+
+
+
+
+
+
+
+
+                              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+</div>

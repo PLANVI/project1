@@ -1,0 +1,33 @@
+﻿@model JokesWebApp.Models.Сourses
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1> @Model.Name</h1>
+
+<div>
+    >
+    <hr />
+
+
+
+
+    
+
+
+
+    <div class="songText">
+        <p> @Html.Raw(Model.Material)</p>
+    </div>
+
+    
+
+
+
+
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

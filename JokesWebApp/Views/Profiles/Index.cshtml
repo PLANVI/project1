@@ -1,0 +1,29 @@
+﻿@model IEnumerable<JokesWebApp.Models.Profile>
+
+@{
+    ViewData["Title"] = "Профиль";
+}
+
+<h1>Профиль</h1>
+
+
+
+@foreach (var item in Model) {
+       
+    
+    <ul>
+        
+        <li class="nav-item">Name: @User.Identity?.Name!</li>
+        
+    </ul>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+}
+    

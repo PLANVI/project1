@@ -1,0 +1,52 @@
+﻿@model JokesWebApp.Models.Song
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1> @Model.Singer</h1>
+
+<div>
+    <h4>@Model.SongName</h4>
+    <hr />
+
+    
+
+  
+    <iframe width="700" height="400" src="@Model.YouTubeUrl"
+            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    allowfullscreen></iframe>
+
+    
+   
+    <div class="songText">
+        <p> @Html.Raw(Model.SongText)</p>
+    </div>
+
+    <div>
+
+       
+
+        <div class="materialCard">
+
+            <h2>Слова/ материал </h2>
+            <img class="cat" src="~/images/details/cat.png" alt="cat" />
+            
+
+            <div class="material"> 
+                <p>
+                    @Html.Raw(Model.Material)
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    
+    
+
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

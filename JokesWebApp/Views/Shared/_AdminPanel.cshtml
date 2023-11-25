@@ -1,0 +1,79 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+
+
+@if (User.IsInRole("Admin"))
+{
+    <ul class="navbar-nav flex-grow-1 indexMenu">
+
+
+
+
+
+
+
+        <li class="nav-item dropdown">
+
+            <a class="nav-link text-dark dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Админ
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                <li><a class="dropdown-item" asp-area="" asp-controller="Songs" asp-action="CreateSongs">Создать новую запись</a></li>
+                <li><a class="dropdown-item" asp-area="" asp-controller="Сourses" asp-action="Create">Создать новый курс</a></li>
+                <li><a class="dropdown-item" asp-area="" asp-controller="Cafes" asp-action="Create">Добавить кафе</a></li>
+                <li><a class="dropdown-item" href="#">Участники</a></li>
+                <li><a class="dropdown-item" href="#">Модераторы</a></li>
+                <li><a class="dropdown-item" href="#">Настройки сайта</a></li>
+            </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+
+            <a class="nav-link text-dark dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Курсы
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                <li><a class="dropdown-item" href="#">Вводный курс</a></li>
+
+
+
+            </ul>
+        </li>
+
+    </ul>
+
+
+}
+else
+{
+    <ul class="navbar-nav flex-grow-1 indexMenu">
+
+
+
+
+
+
+
+        <li >
+
+            
+            
+        </li>
+
+        <li class="nav-item dropdown">
+
+            <a class="nav-link text-dark dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Курсы
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                <li><a class="dropdown-item" href="#">Вводный курс</a></li>
+
+
+
+            </ul>
+        </li>
+
+    </ul>
+}
